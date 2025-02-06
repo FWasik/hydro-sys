@@ -44,4 +44,4 @@ class HydroponicSystemFilter(BaseFilter):
 
     class Meta:
         model = HydroponicSystem
-        fields = ("timestamp",)
+        fields = ("type", "timestamp")
