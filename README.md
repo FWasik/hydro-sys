@@ -25,7 +25,7 @@ In my case, `<name_of_container>` is `hydro-sys-backend`.
 
 No need to worry about migrations - they are applied automatically when the container starts. Also, if you want to create new users, you must do so via the admin panel.
 
-You can debug the application, there is already the configuration for vscode in `.vscode/launch.json`. In Visual Studio Code switch to `Run and Debug`, change to `Python Debugger: Remote Attach` and press F5 button.
+You can debug the application, there is already the configuration for vscode in `.vscode/launch.json`. In Visual Studio Code switch to `Run and Debug` view, change to `Python Debugger: Remote Attach` and press F5 button.
 
 And that’s it! You can now use the application freely.
 
@@ -149,10 +149,10 @@ Here are a few examples of endpoints:
 - http://localhost:8000/systems/hydroponic/?type=DWC&ordering=-timestamp
 
 
-Swagger is also included in the app. Here are the links (remember to start the app first):
+Swagger is also included in the app. Swagger is also included in the app. I am aware that the Swagger configuration is quite basic, but I wanted to keep it as simple as possible. Here are the links (remember to start the app first):
 
-[Swagger](http://localhost:8000/swagger/)
-[REDOC delivered by Swagger](http://localhost:8000/redoc/)
+- [Swagger](http://localhost:8000/swagger/)
+- [REDOC delivered by Swagger](http://localhost:8000/redoc/)
 
 
 ## How you can run unittests
