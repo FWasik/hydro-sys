@@ -155,7 +155,7 @@ Swagger is also included in the app. Swagger is also included in the app. I am a
 - [REDOC delivered by Swagger](http://localhost:8000/redoc/)
 
 
-## How you can run unittests
+## How to run unittests
 To run unittests, you need to attach to the running container exactly as shown in the second paragraph. Then, run the following command:
 
 ```
