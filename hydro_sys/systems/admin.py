@@ -4,19 +4,19 @@ from .models import HydroponicSystem, Measurement
 
 @admin.register(HydroponicSystem)
 class HydroponicSystemAdmin(admin.ModelAdmin):
-    list_display = ("name", "type", "owner", "created_at")
+    list_display = ("name", "type", "owner", "timestamp")
     list_filter = ("type", "owner")
     search_fields = ("name", "owner__username")
-    ordering = ("-created_at",)
-    date_hierarchy = "created_at"
+    ordering = ("-timestamp",)
+    date_hierarchy = "timestamp"
 
     fieldsets = (
         ("Basic Info", {"fields": ("name", "type", "description")}),
         ("Ownership", {"fields": ("owner",)}),
-        ("Timestamps", {"fields": ("created_at",)}),
+        ("Timestamps", {"fields": ("timestamp",)}),
     )
 
-    readonly_fields = ("created_at",)
+    readonly_fields = ("timestamp",)
 
 
 @admin.register(Measurement)
@@ -25,6 +25,8 @@ class MeasurementAdmin(admin.ModelAdmin):
     search_fields = ("system__name", "ph", "temperature", "tds", "description")
     list_filter = ("system", "timestamp", "ph", "temperature", "tds")
     list_editable = ("ph", "temperature", "tds")
+    ordering = ("-timestamp",)
+    date_hierarchy = "timestamp"
 
     fieldsets = (
         (
@@ -35,4 +37,3 @@ class MeasurementAdmin(admin.ModelAdmin):
     )
 
     readonly_fields = ("timestamp",)
-    ordering = ("-timestamp",)
