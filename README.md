@@ -149,7 +149,7 @@ Here are a few examples of endpoints:
 - http://localhost:8000/systems/hydroponic/?type=DWC&ordering=-timestamp
 
 
-Swagger is also included in the app. Swagger is also included in the app. I am aware that the Swagger configuration is quite basic, but I wanted to keep it as simple as possible. Here are the links (remember to start the app first):
+Swagger is also included in the app. I am aware that the Swagger configuration is quite basic, but I wanted to keep it as simple as possible. Here are the links (remember to start the app first):
 
 - [Swagger](http://localhost:8000/swagger/)
 - [REDOC delivered by Swagger](http://localhost:8000/redoc/)
