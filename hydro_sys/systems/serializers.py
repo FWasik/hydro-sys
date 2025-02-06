@@ -16,17 +16,11 @@ class MeasurementSerializer(serializers.ModelSerializer):
         model = Measurement
         fields = "__all__"
 
-    def validate_ph(self, value):
-        if not (0 <= value <= 14):
-            raise serializers.ValidationError("pH value must be between 0 and 14")
 
-        return value
-
-    def validate_tds(self, value):
-        if value < 0:
-            raise serializers.ValidationError("TDS must be equal to or greater than 0")
-
-        return value
+class HydroponicSystemListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HydroponicSystem
+        fields = ("id", "name", "type", "timestamp", "description")
 
 
 class HydroponicSystemDetailSerializer(serializers.ModelSerializer):
