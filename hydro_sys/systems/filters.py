@@ -40,6 +40,8 @@ class MeasurementFilter(BaseFilter):
 
 
 class HydroponicSystemFilter(BaseFilter):
+    type = django_filters.ChoiceFilter(choices=HydroponicSystem.types)
+
     class Meta:
         model = HydroponicSystem
         fields = ("timestamp",)
