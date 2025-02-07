@@ -95,7 +95,7 @@ The app supports pagination, ordering, and filtering of data. The data is pagina
 
 Filtering is handled by the following classes:
 ```python
-    class BaseFilter(django_filters.FilterSet):
+class BaseFilter(django_filters.FilterSet):
     datetime_from = django_filters.IsoDateTimeFilter(
         field_name="timestamp", lookup_expr="gte", label="From Datetime"
     )
@@ -138,7 +138,7 @@ class HydroponicSystemFilter(BaseFilter):
     class Meta:
         model = HydroponicSystem
         fields = ("type", "timestamp")
-  ```
+```
 
 Each field can be used in the URL to filter data based on your preferences. Remember, the application supports JWT, so to perform any action across the app, you must first obtain an access token. The app includes features that prevent users from performing any actions on records they do not own.
 
