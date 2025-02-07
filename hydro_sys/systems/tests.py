@@ -3,31 +3,16 @@ from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 from django.contrib.auth import get_user_model
 from .models import HydroponicSystem, Measurement
+from tests.base import BaseTestCase
 
 User = get_user_model()
-
-
-class BaseTestCase(APITestCase):
-    def setUp(self):
-        self.user = User.objects.create_user(
-            username="test_user",
-            email="test_email@email.com",
-            password="test_pass",
-            phone_number="123456789",
-        )
-        self.other_user = User.objects.create_user(
-            username="other_user",
-            email="other_email@email.com",
-            password="test_pass",
-            phone_number="987654321",
-        )
-
-        self.client.force_authenticate(user=self.user)
 
 
 class HydroponicSystemTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
+
+        self.client.force_authenticate(user=self.user)
 
         self.systems = [
             HydroponicSystem.objects.create(
@@ -110,6 +95,8 @@ class HydroponicSystemTestCase(BaseTestCase):
 class MeasurementTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
+
+        self.client.force_authenticate(user=self.user)
 
         self.system = HydroponicSystem.objects.create(
             name="Test System", owner=self.user, type="NFT"
