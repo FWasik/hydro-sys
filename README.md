@@ -155,6 +155,13 @@ Swagger is also included in the app. I am aware that the Swagger configuration i
 - [REDOC delivered by Swagger](http://localhost:8000/redoc/)
 
 
+##### !!! WARNING !!!
+To use Swagger, you must:
+
+1. Obtain an access token from the `/api/token` endpoint (you can use superuser credentials which you used).
+2. Click the "Authorize" button.
+3. Enter the token in the field as: Bearer <YOUR_ACCESS_TOKEN>.
+
 ## How to run unittests
 To run unittests, you need to attach to the running container exactly as shown in the second paragraph. Then, run the following command:
 

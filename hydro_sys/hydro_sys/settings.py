@@ -156,3 +156,16 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER": timedelta(days=1),
     "SLIDING_TOKEN_LIFETIME_LATE_USER": timedelta(days=30),
 }
+
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": 'JWT Authorization header using the Bearer scheme. Example: "Bearer <JWT Token>"',
+        }
+    },
+    "USE_SESSION_AUTH": False,
+    "VALIDATOR_URL": None,
+}
